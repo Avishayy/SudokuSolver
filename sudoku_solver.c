@@ -19,7 +19,7 @@ bool checkSquare(byte board[9][9], point sqStart, point valPt);
 void printBoard(byte board[9][9]);
     
 int main(int argc, char** argv) {
-    byte board[9][9] = {
+    byte board[9][9] = { //edit the variable to whatever board you have, if you want it to be unfilled leave as 0
                          {0, 0, 0, 0, 6, 0, 5, 0, 0},
                          {0, 4, 0, 0, 0, 0, 3, 0, 2},
                          {5, 0, 0, 1, 0, 4, 0, 0, 0},
@@ -32,10 +32,7 @@ int main(int argc, char** argv) {
                                                     };
     printf("Board is %s\n", solveSudoku(board) ? "fine" : "not fine");
     printBoard(board);
-    //point pt;
-    //pt.x = 0; // >> / <<
-    //pt.y = 6; // DOWN / UP
-   // printf("%d", checkBoard(board, pt));
+
     return EXIT_SUCCESS;
 }
 
@@ -93,12 +90,6 @@ bool checkSquare(byte board[9][9], point sqStart, point valPt) {
                 return false;
             }
     return true;
-}
-
-void insertIntoMat(byte mat[9][9], byte arr[], int index) {
-    int i;
-    for (i = 0; i < 9; i++)
-        mat[index][i] = arr[i];
 }
 
 void printBoard(byte board[9][9]) {
